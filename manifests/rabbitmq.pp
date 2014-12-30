@@ -2,7 +2,7 @@
 #
 class role_sensu::rabbitmq.pp (
   $sensu_passwd = 'Passw0rd', 
-) {
+  ) {
 
   Exec { path => [ "/opt/rabbitmq/sbin", "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
   
