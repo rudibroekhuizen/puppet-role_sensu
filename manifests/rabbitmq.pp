@@ -20,10 +20,10 @@ class role_sensu::rabbitmq.pp {
     unless  => "rabbitmqctl list_users | grep sensu",
   }
 
-  #exec { "tags-sensu":
-  #  command => "rabbitmqctl set_user_tags sensu administrator",
-  #  unless  => "rabbitmqctl list_users | grep sensu",
-  #}
+  exec { "tags-sensu":
+    command => "rabbitmqctl set_user_tags sensu administrator",
+    unless  => "rabbitmqctl list_users | grep administrator",
+  }
 
   exec { "perm-sensu":
     command => 'rabbitmqctl set_permissions -p /sensu sensu ".*" ".*" ".*"',
