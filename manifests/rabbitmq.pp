@@ -31,7 +31,7 @@ class role_sensu::rabbitmq.pp {
   exec { "perm-sensu":
     command => 'rabbitmqctl set_permissions -p /sensu sensu ".*" ".*" ".*"',
     unless  => "rabbitmqctl list_permissions -p /sensu | grep -E 'sensu.*\.\*.*\.\*.*\.\*'",
-    require => [[Class['::rabbitmq'], Exec['user-sensu'],Exec['vhost-sensu']]
+    require => [[Class['::rabbitmq'], Exec['user-sensu'], Exec['vhost-sensu']]
   }    
 
 }
