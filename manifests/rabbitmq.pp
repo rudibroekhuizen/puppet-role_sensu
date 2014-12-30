@@ -1,6 +1,8 @@
 # == Class: role_sensu::rabbitmq.pp
 #
-class role_sensu::rabbitmq.pp {
+class role_sensu::rabbitmq.pp (
+  $sensu_passwd = Passw0rd, 
+) {
 
   Exec { path => [ "/opt/rabbitmq/sbin", "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
   
@@ -8,8 +10,6 @@ class role_sensu::rabbitmq.pp {
     delete_guest_user => true,
   }
  
-  $sensu_passwd = hiera('rq::sensu')  
-
   exec { "vhost-sensu":
     command => "rabbitmqctl add_vhost /sensu",
     unless  => "rabbitmqctl list_vhosts | grep sensu",
