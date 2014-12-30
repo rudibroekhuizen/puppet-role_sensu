@@ -1,6 +1,6 @@
-# == Class: role_sensu::sensu-client.pp
+# == Class: role_sensu::client.pp
 #
-class role_sensu::sensu-client.pp {
+class role_sensu::client.pp {
 
   class { 'sensu':
     rabbitmq_password => 'correct-horse-battery-staple',
