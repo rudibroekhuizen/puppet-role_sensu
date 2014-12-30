@@ -13,25 +13,25 @@ class role_sensu::rabbitmq.pp {
   exec { "vhost-sensu":
     command => "rabbitmqctl add_vhost /sensu",
     unless  => "rabbitmqctl list_vhosts | grep sensu",
-    require => [Exec['user-sensu'],Exec['vhost-sensu']]
+    require => Class['::rabbitmq']
   }
 
   exec { "user-sensu":
     command => "rabbitmqctl add_user sensu $sensu_passwd",
     unless  => "rabbitmqctl list_users | grep sensu",
-    require => [Exec['user-sensu'],Exec['vhost-sensu']]
+    require => Class['::rabbitmq']
   }
 
   exec { "tags-sensu":
     command => "rabbitmqctl set_user_tags sensu administrator",
     unless  => "rabbitmqctl list_users | grep administrator",
-    require => [Exec['user-sensu'],Exec['vhost-sensu']]
+    require => [Class['::rabbitmq'], Exec['user-sensu']]
   }
 
   exec { "perm-sensu":
     command => 'rabbitmqctl set_permissions -p /sensu sensu ".*" ".*" ".*"',
     unless  => "rabbitmqctl list_permissions -p /sensu | grep -E 'sensu.*\.\*.*\.\*.*\.\*'",
-    require => [Exec['user-sensu'],Exec['vhost-sensu']]
+    require => [[Class['::rabbitmq'], Exec['user-sensu'],Exec['vhost-sensu']]
   }    
 
 }
