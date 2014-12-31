@@ -6,7 +6,9 @@ class role_sensu::rabbitmq.pp (
   $sensu_passwd = 'Passw0rd', 
   ) {
 
-  Exec { path => [ "/opt/rabbitmq/sbin", "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
+  Exec { 
+    path => [ "/opt/rabbitmq/sbin", "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ]
+  }
   
   class {'::rabbitmq':
     delete_guest_user => true,
