@@ -2,6 +2,9 @@
 #
 class role_sensu::server.pp {
 
+  class { 'role_sensu::rabbitmq':
+  }
+  
   class { 'sensu':
     install_repo      => true,
     server            => true,
