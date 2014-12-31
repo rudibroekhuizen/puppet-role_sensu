@@ -16,6 +16,7 @@ class role_sensu::server.pp {
     api_user          => 'admin',
     api_password      => 'secret',
     client_address    => $::ipaddress_eth1,
+    require           => Class['role_sensu::rabbitmq']
   }
 
   sensu::handler { 'default':
