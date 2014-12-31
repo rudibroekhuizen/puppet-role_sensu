@@ -2,9 +2,10 @@
 #
 class role_sensu::server.pp {
 
-  class { 'role_sensu::rabbitmq':
-  }
-  
+  class { 'redis': } ->
+
+  class { 'role_sensu::rabbitmq': } ->
+
   class { 'sensu':
     install_repo      => true,
     server            => true,
@@ -15,8 +16,7 @@ class role_sensu::server.pp {
     api               => true,
     api_user          => 'admin',
     api_password      => 'secret',
-    client_address    => $::ipaddress_eth1,
-    require           => Class['role_sensu::rabbitmq']
+    client_address    => $::ipaddress_eth1
   }
 
   sensu::handler { 'default':
