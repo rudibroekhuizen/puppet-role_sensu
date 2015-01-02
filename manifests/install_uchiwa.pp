@@ -8,7 +8,7 @@ class role_sensu::install_uchiwa (
                           port     => 4567,
                           user     => 'sensu',
                           pass     => 'sensu',
-                          path     => '/sensu',
+                          path     => '',
                           timeout  => 5
                         }]
 
