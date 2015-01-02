@@ -15,7 +15,7 @@ class role_sensu::rabbitmq (
   }
  
   exec { "vhost-sensu":
-    command => "rabbitmqctl add_vhost /sensu",
+    command => "rabbitmqctl add_vhost sensu",
     unless  => "rabbitmqctl list_vhosts | grep sensu",
     require => Class['::rabbitmq']
   }
@@ -34,7 +34,7 @@ class role_sensu::rabbitmq (
 
   exec { "perm-sensu":
     command => 'rabbitmqctl set_permissions -p /sensu sensu ".*" ".*" ".*"',
-    unless  => "rabbitmqctl list_permissions -p /sensu | grep -E 'sensu.*\.\*.*\.\*.*\.\*'",
+    unless  => 'rabbitmqctl list_permissions -p sensu | /bin/grep -v vhost | grep sensu',
     require => [Class['::rabbitmq'], Exec['vhost-sensu'], Exec['user-sensu']]
   }    
 
