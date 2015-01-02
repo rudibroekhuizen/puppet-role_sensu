@@ -21,6 +21,8 @@ Create sensu-server and sensu-client.
 * user: sensu
 * password: $rabbitmq_password
 
+Uchiwa: http://$ipaddress:3000
+
 ## Module Description
 
 If applicable, this section should have a brief description of the technology
