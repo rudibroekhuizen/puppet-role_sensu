@@ -1,6 +1,8 @@
-# == Class: role_sensu::uchiwa.pp
+# == Class: role_sensu::uchiwa
 #
-class role_sensu::uchiwa.pp {
+# Based on https://github.com/sensu/sensu-puppet/blob/master/tests/uchiwa.pp
+#
+class role_sensu::uchiwa {
 
   package { 'uchiwa':
     ensure => present,
