@@ -40,7 +40,8 @@ management, etc.) this is the time to mention it.
 
 ### Setup Requirements
 
-Module https://forge.puppetlabs.com/sensu/sensu
+* https://forge.puppetlabs.com/sensu/sensu
+* https://forge.puppetlabs.com/arioch/redis
 
 ### Beginning with role_sensu
 
