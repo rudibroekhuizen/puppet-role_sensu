@@ -10,7 +10,7 @@ class role_sensu::install_uchiwa (
                            timeout  => 5
                           } ],
   $uchiwa_user = 'admin',
-  $uchiwa_pass = 'admin',
+  $uchiwa_pass = 'secret',
 
   ) {
 
