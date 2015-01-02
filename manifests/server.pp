@@ -1,6 +1,6 @@
-# == Class: role_sensu::server.pp
+# == Class: role_sensu::server
 #
-class role_sensu::server.pp (
+class role_sensu::server (
   $rabbitmq_password,
   ) {
 
