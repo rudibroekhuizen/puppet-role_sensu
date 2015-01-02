@@ -5,7 +5,7 @@ class role_sensu::dashboard (
                            ssl      => false,
                            insecure => false,
                            port     => 4567,
-                           user     => 'admin',
+                           user     => $server::api_user,
                            pass     => 'secret',
                            timeout  => 5
                           } ],
