@@ -3,7 +3,7 @@
 class role_sensu::client.pp {
   $sensu_server,
   $rabbitmq_password,
-  $sensu_cluster_name,
+  #$sensu_cluster_name,
 
   class { 'sensu':
     rabbitmq_password => $rabbitmq_password,
