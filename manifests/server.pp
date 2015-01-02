@@ -25,6 +25,12 @@ class role_sensu::server.pp (
     command => 'mail -s \'sensu alert\' ops@example.com',
   }
 
+  vcsrepo { '/opt/sensu-community-plugins':
+    ensure   => present,
+    provider => git,
+    source   => 'git://github.com/sensu/sensu-community-plugins',
+  }
+  
   sensu::check { "check_cron":
     command => '/opt/sensu-community-plugins/plugins/system/check_cron.rb',
   }
