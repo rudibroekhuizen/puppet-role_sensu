@@ -26,7 +26,7 @@ class role_sensu::server.pp {
   sensu::check { 'check_ntp':
     command     => 'PATH=$PATH:/usr/lib/nagios/plugins check_ntp_time -H pool.ntp.org -w 30 -c 60',
     handlers    => 'default',
-    subscribers => 'sensu-test'
+    subscribers => 'sensu-test-rudi'
   }
   
 }
