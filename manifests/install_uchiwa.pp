@@ -2,7 +2,7 @@
 #
 class role_sensu::install_uchiwa (
   $uchiwa_api_config = [{
-                          host     => '10.42.1.151',
+                          host     => $::ipaddress,
                           ssl      => false,
                           insecure => false,
                           port     => 4567,
