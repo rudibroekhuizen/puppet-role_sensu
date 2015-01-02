@@ -25,10 +25,8 @@ class role_sensu::server.pp (
     command => 'mail -s \'sensu alert\' ops@example.com',
   }
 
-  sensu::check { 'check_ntp':
-    command     => 'PATH=$PATH:/usr/lib/nagios/plugins check_ntp_time -H pool.ntp.org -w 30 -c 60',
-    handlers    => 'default',
-    subscribers => 'sensu-test-rudi'
+  sensu::check { "check_cron":
+    command => '/opt/sensu-community-plugins/plugins/system/check_cron.rb',
   }
   
 }
