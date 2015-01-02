@@ -9,8 +9,9 @@ class role_sensu::client.pp {
     rabbitmq_password => $rabbitmq_password,
     rabbitmq_host     => $sensu_server,
     rabbitmq_vhost    => '/sensu',
-    subscriptions     => 'all',
-    #client_address    => $::ipaddress_eth1,
+    subscriptions     => 'sensu-test-rudi',
+    #subscriptions    => 'all',
+    #client_address   => $::ipaddress_eth1,
   }
   
 }
