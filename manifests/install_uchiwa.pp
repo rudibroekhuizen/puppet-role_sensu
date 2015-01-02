@@ -14,6 +14,12 @@ class role_sensu::install_uchiwa (
 
   ) {
 
+  uchiwa::api { 'Default Uchiwa API':
+    host => $::ipaddress,
+    user => '',
+    pass => '',
+  }
+
   class { 'uchiwa':
     sensu_api_endpoints => $uchiwa_api_config,
   }
