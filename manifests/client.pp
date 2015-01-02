@@ -6,12 +6,13 @@ class role_sensu::client (
   ) {
 
   class { 'sensu':
-    rabbitmq_password => $rabbitmq_password,
-    rabbitmq_host     => $sensu_server,
-    rabbitmq_vhost    => '/sensu',
-    subscriptions     => 'sensu-test-rudi',
-    #subscriptions    => 'all',
-    #client_address   => $::ipaddress_eth1,
+    rabbitmq_password    => $rabbitmq_password,
+    rabbitmq_host        => $sensu_server,
+    rabbitmq_vhost       => '/sensu',
+    subscriptions        => 'sensu-test-rudi',
+    sensu_plugin_version => installed,
+    #subscriptions       => 'all',
+    #client_address      => $::ipaddress_eth1,
   }
   
   #package { 'sensu-plugin':
