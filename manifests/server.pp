@@ -35,7 +35,7 @@ class role_sensu::server (
     command     => '/opt/sensu-community-plugins/plugins/system/check-procs.rb -p crond -C 1 ',
     handlers    => 'default',
     subscribers => 'sensu-test-rudi',
-    #standalone  => false,
+    standalone  => true,
     publish     => true,
   }
   
