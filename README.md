@@ -15,9 +15,11 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Create sensu-server and sensu-client.
+Rabbitmq webinterface: 
+* http://$ipaddress:15672/
+* user: sensu
+* password: $rabbitmq_password
 
 ## Module Description
 
