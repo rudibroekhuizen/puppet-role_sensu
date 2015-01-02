@@ -33,7 +33,7 @@ class role_sensu::server (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
-  # Example check if cron service is running
+  # Example check: is cron service running
   # check-procs.rb will run on clients, where subscriptions is 'sensu-test-rudi'
   # check-procs.rb file must be available on sensu-client
   sensu::check { "check-procs_cron":
