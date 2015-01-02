@@ -6,7 +6,7 @@ class role_sensu::dashboard (
                            insecure => false,
                            port     => 4567,
                            user     => 'admin',  #api_user
-                           pass     => 'secret', #api_pass
+                           pass     => 'secret', #api_password
                            timeout  => 5
                           } ],
   $uchiwa_user = 'admin',
