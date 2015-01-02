@@ -1,10 +1,10 @@
-# == Class: role_sensu::uchiwa
+# == Class: role_sensu::install_uchiwa
 #
-class role_sensu::uchiwa (
+class role_sensu::install_uchiwa (
   $uchiwa_api_config = [{
                           host     => '127.0.0.1',
-                          ssl      => true,
-                          insecure => true,
+                          ssl      => false,
+                          insecure => false,
                           port     => 4567,
                           user     => 'sensu',
                           pass     => 'sensu',
