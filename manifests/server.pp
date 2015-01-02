@@ -2,8 +2,8 @@
 #
 class role_sensu::server (
   $rabbitmq_password,
-  $api_user = 'admin',
-  $api_password,
+  $api_user     = 'admin',
+  $api_password = 'secret',
   ) {
 
   class { 'redis': } ->
