@@ -31,6 +31,8 @@ class role_sensu::server (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
+  # check-procs.rb will run on clients, where subscriptions is 'sensu-test-rudi'
+  # check-procs.rb file must be available on sensu-server, not on sensu-client
   sensu::check { "check-procs_cron":
     command     => '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
     handlers    => 'default',
