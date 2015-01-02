@@ -16,7 +16,7 @@
 ## Overview
 
 Create sensu-server and sensu-client.
-Rabbitmq webinterface: 
+* Rabbitmq webinterface: 
 * http://$ipaddress:15672/
 * user: sensu
 * password: $rabbitmq_password
