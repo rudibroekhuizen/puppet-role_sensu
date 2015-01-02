@@ -22,7 +22,7 @@ class role_sensu::server (
   }
 
   sensu::handler { 'default':
-    command => 'mail -s \'sensu alert\' ops@example.com',
+    command => 'echo "sensu alert" >> /tmp/sensu.log',
   }
 
   vcsrepo { '/opt/sensu-community-plugins':
