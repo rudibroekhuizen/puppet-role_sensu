@@ -6,8 +6,8 @@ class role_sensu::install_uchiwa (
                           ssl      => false,
                           insecure => true,
                           port     => 4567,
-                          user     => 'sensu',
-                          pass     => 'Passw0rd',
+                          user     => 'admin',
+                          pass     => 'secret',
                           path     => '/sensu',
                           timeout  => 5
                         }]
