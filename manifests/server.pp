@@ -32,7 +32,7 @@ class role_sensu::server (
   }
   
   sensu::check { "cron_check":
-    command     => '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p crond -C 1 ',
+    command     => '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
     handlers    => 'default',
     subscribers => 'sensu-test-rudi',
     standalone  => false,
