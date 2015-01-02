@@ -32,7 +32,7 @@ class role_sensu::client (
   }
   
  sensu::check { "diskspace":
-    command => '/etc/sensu/plugins/system/check-disk.rb',
+    command => '/opt/sensu-community-plugins/plugins/system/check-disk.rb',
     subscribers => 'sensu-test-rudi'
   }
   
