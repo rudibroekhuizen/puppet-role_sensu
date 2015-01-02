@@ -2,14 +2,15 @@
 #
 class role_sensu::install_uchiwa (
   $uchiwa_api_config = [{
+                          name     => 'sensu',
                           host     => $::ipaddress,
                           ssl      => false,
                           insecure => false,
                           port     => 4567,
                           user     => 'sensu',
-                          pass     => 'sensu',
+                          pass     => 'Passw0rd',
                           path     => '',
-                          timeout  => 5
+                          timeout  => 5,
                         }]
 
   ) {
