@@ -14,10 +14,10 @@ class role_sensu::client (
     #client_address   => $::ipaddress_eth1,
   }
   
-  package { 'sensu-plugin':
-    ensure   => installed,
-    provider => gem,
-  }
+  #package { 'sensu-plugin':
+  #  ensure   => installed,
+  #  provider => gem,
+  #}
   
   vcsrepo { '/opt/sensu-community-plugins':
     ensure   => present,
