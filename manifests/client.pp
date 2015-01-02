@@ -31,9 +31,8 @@ class role_sensu::client (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
-  sensu::check { 'check_cron':
-    command     => '/bin/ps -aux | grep -v grep | grep cron',
-    handlers    => 'default',
+ sensu::check { "diskspace":
+    command => '/etc/sensu/plugins/system/check-disk.rb',
     subscribers => 'sensu-test-rudi'
   }
   
