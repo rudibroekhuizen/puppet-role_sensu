@@ -31,4 +31,10 @@ class role_sensu::client (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
+  sensu::check { 'check_cron':
+    command     => '/bin/ps -aux | grep -v grep | grep cron',
+    handlers    => 'default',
+    subscribers => 'sensu-test'
+  }
+  
 }
