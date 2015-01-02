@@ -1,6 +1,8 @@
 # == Class: role_sensu::server.pp
 #
-class role_sensu::server.pp {
+class role_sensu::server.pp (
+  $rabbitmq_password,
+  ) {
 
   class { 'redis': } ->
 
@@ -11,7 +13,7 @@ class role_sensu::server.pp {
     server            => true,
     manage_services   => true,
     manage_user       => true,
-    rabbitmq_password => 'correct-horse-battery-staple',
+    rabbitmq_password => $rabbitmq_password,
     rabbitmq_vhost    => '/sensu',
     api               => true,
     api_user          => 'admin',
