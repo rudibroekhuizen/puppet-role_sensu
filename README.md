@@ -44,6 +44,7 @@ management, etc.) this is the time to mention it.
 
 * https://forge.puppetlabs.com/sensu/sensu
 * https://forge.puppetlabs.com/arioch/redis
+* https://forge.puppetlabs.com/yelp/uchiwa
 
 ### Beginning with role_sensu
 
