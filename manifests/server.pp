@@ -31,8 +31,12 @@ class role_sensu::server (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
-  sensu::check { "check-procs":
-    command => '/opt/sensu-community-plugins/plugins/system/check-procs.rb',
+  sensu::check { "cron_check":
+    command     => '/opt/sensu-community-plugins/plugins/system/check-procs.rb -p crond -C 1 ',
+    handlers    => 'default',
+    subscribers => 'sensu-test-rudi',
+    #standalone  => false,
+    publish     => true,
   }
   
 }
