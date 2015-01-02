@@ -14,7 +14,7 @@ class role_sensu::client.pp (
     #client_address   => $::ipaddress_eth1,
   }
   
-  package { sensu-plugin:
+  package { 'sensu-plugin':
     ensure   => installed,
     provider => gem,
   }
