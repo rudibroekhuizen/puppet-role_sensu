@@ -31,8 +31,8 @@ class role_sensu::client (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
-  sensu::check { "check_cron":
-    command => '/opt/sensu-community-plugins/plugins/system/check_cron.rb',
+  sensu::check { "check-procs":
+    command => '/opt/sensu-community-plugins/plugins/system/check-procs.rb',
   }
   
 }
