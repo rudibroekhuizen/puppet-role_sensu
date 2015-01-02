@@ -1,6 +1,6 @@
-# == Class: role_sensu::install_uchiwa
+# == Class: role_sensu::dashboard
 #
-class role_sensu::install_uchiwa (
+class role_sensu::dashboard (
   $uchiwa_api_config = [ { host     => 'localhost',
                            ssl      => false,
                            insecure => false,
