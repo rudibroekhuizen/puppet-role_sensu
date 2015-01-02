@@ -14,6 +14,7 @@ class role_sensu::install_uchiwa (
 
   ) {
 
+  # username and password for webinterface, port 3000
   class { 'uchiwa':
     sensu_api_endpoints => $uchiwa_api_config,
     user     => 'admin',
