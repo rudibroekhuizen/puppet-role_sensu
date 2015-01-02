@@ -8,7 +8,7 @@ class role_sensu::install_uchiwa (
                           insecure => false,
                           port     => 4567,
                           user     => 'sensu',
-                          pass     => 'Passw0rd',
+                          pass     => 'sensu',
                           path     => '',
                           timeout  => 5,
                         }]
