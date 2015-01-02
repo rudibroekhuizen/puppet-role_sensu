@@ -24,7 +24,8 @@ class role_sensu::server (
   sensu::handler { 'default':
     command => 'echo "sensu alert" >> /tmp/sensu.log',
   }
-
+  
+  # download sensu community plugins
   vcsrepo { '/opt/sensu-community-plugins':
     ensure   => present,
     provider => git,
