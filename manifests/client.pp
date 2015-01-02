@@ -14,4 +14,15 @@ class role_sensu::client.pp (
     #client_address   => $::ipaddress_eth1,
   }
   
+  package { sensu-plugin:
+    ensure   => installed,
+    provider => gem,
+  }
+  
+  vcsrepo { '/opt/sensu-community-plugins':
+    ensure   => present,
+    provider => git,
+    source   => 'git://github.com/sensu/sensu-community-plugins',
+  }
+  
 }
