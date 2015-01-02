@@ -16,6 +16,8 @@ class role_sensu::install_uchiwa (
 
   class { 'uchiwa':
     sensu_api_endpoints => $uchiwa_api_config,
+    user     => 'admin',
+    pass     => 'secret',
   }
 
 }
