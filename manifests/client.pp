@@ -1,8 +1,8 @@
 # == Class: role_sensu::client
 #
 class role_sensu::client (
-  $rabbitmq_password,
-  $sensu_server,
+  $rabbitmq_password = 'secret',
+  $sensu_server      = '172.16.3.14',
   ) {
   
   # Ruby-dev is needed for sensu-plugin
