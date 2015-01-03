@@ -21,8 +21,6 @@ class role_sensu::client (
     rabbitmq_vhost       => '/sensu',
     subscriptions        => 'sensu-test-rudi',
     sensu_plugin_version => installed,           #gem install sensu-plugin
-    #subscriptions       => 'all',
-    #client_address      => $::ipaddress_eth1,
   }
  
   vcsrepo { '/opt/sensu-community-plugins':
