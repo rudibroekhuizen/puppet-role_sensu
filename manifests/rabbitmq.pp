@@ -3,7 +3,7 @@
 # Based on https://github.com/sensu/sensu-puppet/blob/master/tests/rabbitmq.sh
 #
 class role_sensu::rabbitmq (
-  $sensu_passwd = 'Passw0rd', 
+  $rabbitmq_password = 'secret', 
   ) {
 
   Exec { 
@@ -21,7 +21,7 @@ class role_sensu::rabbitmq (
   }
 
   exec { "user-sensu":
-    command => "rabbitmqctl add_user sensu $sensu_passwd",
+    command => "rabbitmqctl add_user sensu $rabbitmq_password",
     unless  => "rabbitmqctl list_users | grep sensu",
     require => Class['::rabbitmq']
   }
