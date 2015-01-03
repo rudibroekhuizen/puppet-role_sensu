@@ -1,7 +1,8 @@
 # == Class: role_sensu::dashboard
 #
 class role_sensu::dashboard (
-  $uchiwa_api_config = [ { host     => 'localhost',
+  $uchiwa_api_config = [ { name     => 'sensu-01',
+                           host     => 'localhost',
                            ssl      => false,
                            insecure => false,
                            port     => 4567,
