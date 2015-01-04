@@ -22,7 +22,7 @@ class role_sensu::server (
     api_password      => $api_password,
   }
   
-  # Create checks
+  # Create checks hiera yaml input
   class { 'role_sensu::checks': }
   
   # Example handler
