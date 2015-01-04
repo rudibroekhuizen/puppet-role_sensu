@@ -25,6 +25,8 @@ class role_sensu::server (
   # Create checks hiera yaml input
   class { 'role_sensu::checks': }
   
+  class { 'role_sensu::handlers': }
+  
   # Example handler
   sensu::handler { 'default':
     command => 'echo "sensu alert" >> /tmp/sensu.log',
