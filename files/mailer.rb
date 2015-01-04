@@ -1,3 +1,5 @@
+# rudibroekhuizen: get original from https://github.com/sensu/sensu-community-plugins/blob/master/handlers/notification/mailer.rb
+#
 #!/usr/bin/env ruby
 #
 # Sensu Handler: mailer
