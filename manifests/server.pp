@@ -30,7 +30,7 @@ class role_sensu::server (
     command => 'echo "sensu alert" >> /tmp/sensu.log',
   }
   
-  # download sensu community plugins
+  # Download sensu community plugins
   vcsrepo { '/opt/sensu-community-plugins':
     ensure   => present,
     provider => git,
