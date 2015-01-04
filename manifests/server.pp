@@ -21,7 +21,9 @@ class role_sensu::server (
     api_user          => $api_user,
     api_password      => $api_password,
     #client_address    => $::ipaddress_eth1
-  }
+  } ->
+  
+  class { 'role_sensu::checks': }
 
   # Example handler
   sensu::handler { 'default':
@@ -38,12 +40,12 @@ class role_sensu::server (
   # Example check: is cron service running
   # check-procs.rb will run on clients, where subscriptions is 'sensu-test-rudi'
   # check-procs.rb file must be available on sensu-client
-  sensu::check { "check-procs_cron":
-    command     => '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
-    handlers    => 'default',
-    subscribers => 'sensu-test-rudi',
-    standalone  => false,
-    publish     => true,
-  }
+  #sensu::check { "check-procs_cron":
+  #  command     => '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
+  #  handlers    => 'default',
+  #  subscribers => 'sensu-test-rudi',
+  #  standalone  => false,
+  #  publish     => true,
+  #}
   
 }
