@@ -20,7 +20,6 @@ class role_sensu::server (
     api               => true,
     api_user          => $api_user,
     api_password      => $api_password,
-    #client_address    => $::ipaddress_eth1
   }
   
   # Create checks
