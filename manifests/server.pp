@@ -23,6 +23,7 @@ class role_sensu::server (
     #client_address    => $::ipaddress_eth1
   }
   
+  # Create checks
   class { 'role_sensu::checks': }
   
   # Example handler
@@ -36,16 +37,5 @@ class role_sensu::server (
     provider => git,
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
-  
-  # Example check: is cron service running
-  # check-procs.rb will run on clients, where subscriptions is 'sensu-test-rudi'
-  # check-procs.rb file must be available on sensu-client
-  #sensu::check { "check-procs_cron":
-  #  command     => '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
-  #  handlers    => 'default',
-  #  subscribers => 'sensu-test-rudi',
-  #  standalone  => false,
-  #  publish     => true,
-  #}
   
 }
