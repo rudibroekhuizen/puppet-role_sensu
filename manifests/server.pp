@@ -21,7 +21,7 @@ class role_sensu::server (
     api_user          => $api_user,
     api_password      => $api_password,
     #client_address    => $::ipaddress_eth1
-  } ->
+  }
   
   class { 'role_sensu::checks': }
   
