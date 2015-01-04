@@ -9,7 +9,7 @@ class role_sensu::handlers {
 
   sensu::handler { 'mailer':
     type        => 'pipe',
-    source      => '/opt/sensu-community-plugins/handlers/notification/mailer.rb',
+    source      => 'puppet:///modules/sensu-community-plugins/handlers/notification/mailer.rb',
     config      => {
       mail_from     => "sensu-rudi@naturalis.nl",
       mail_to       => "rudi.broekhuizen@naturalis.nl",
