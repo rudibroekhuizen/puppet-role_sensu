@@ -23,6 +23,8 @@ class role_sensu::server (
     #client_address    => $::ipaddress_eth1
   } ->
   
+  class { 'role_sensu::checks': }
+  
   # Example handler
   sensu::handler { 'default':
     command => 'echo "sensu alert" >> /tmp/sensu.log',
