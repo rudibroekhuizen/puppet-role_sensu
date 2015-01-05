@@ -7,6 +7,10 @@ class role_sensu::handlers {
   #  provider => 'gem'
   #}
 
+  sensu::handler { 'default':
+    command => 'echo "sensu alert" >> /tmp/sensu.log',
+  }
+
   sensu::handler { 'mailer':
     type        => 'pipe',
     command     => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
