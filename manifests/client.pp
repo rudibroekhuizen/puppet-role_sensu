@@ -6,21 +6,21 @@ class role_sensu::client (
   ) {
   
   # Ruby-dev is needed for sensu-plugin
-  package { 'ruby-dev':
-    ensure => installed,
-  } ->
+  #package { 'ruby-dev':
+  #  ensure => installed,
+  #} ->
   
   # Make is needed for ruby-dev
-  package { 'make':
-    ensure => installed,
-  } ->
+  #package { 'make':
+  #  ensure => installed,
+  #} ->
 
   class { 'sensu':
     rabbitmq_password    => $rabbitmq_password,
     rabbitmq_host        => $sensu_server,
     rabbitmq_vhost       => '/sensu',
     subscriptions        => 'sensu-test-rudi',
-    sensu_plugin_version => installed,           #gem install sensu-plugin
+    #sensu_plugin_version => installed,           #gem install sensu-plugin
   }
  
   vcsrepo { '/opt/sensu-community-plugins':
