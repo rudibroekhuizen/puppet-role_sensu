@@ -11,15 +11,16 @@ class role_sensu::server (
   class { 'role_sensu::rabbitmq': } ->
 
   class { 'sensu':
-    install_repo      => true,
-    server            => true,
-    manage_services   => true,
-    manage_user       => true,
-    rabbitmq_password => $rabbitmq_password,
-    rabbitmq_vhost    => '/sensu',
-    api               => true,
-    api_user          => $api_user,
-    api_password      => $api_password,
+    install_repo       => true,
+    server             => true,
+    manage_services    => true,
+    manage_user        => true,
+    rabbitmq_password  => $rabbitmq_password,
+    rabbitmq_vhost     => '/sensu',
+    api                => true,
+    api_user           => $api_user,
+    api_password       => $api_password,
+    $use_embedded_ruby => true,
   }
   
   # Create checks hiera yaml input
