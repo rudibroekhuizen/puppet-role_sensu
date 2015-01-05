@@ -22,9 +22,13 @@ class role_sensu::server (
     api_password      => $api_password,
   }
   
+  # Install uchiwa dashboard
+  class { 'role_sensu::dashboard': }
+  
   # Create checks hiera yaml input
   class { 'role_sensu::checks': }
   
+  # Create handlers
   class { 'role_sensu::handlers': }
   
   # Download sensu community plugins
