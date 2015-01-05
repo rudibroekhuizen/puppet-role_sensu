@@ -15,7 +15,7 @@ class role_sensu::rabbitmq (
   }
  
   exec { "vhost-sensu":
-    command => "rabbitmqctl add_vhost sensu",
+    command => "rabbitmqctl add_vhost /sensu",
     unless  => "rabbitmqctl list_vhosts | grep sensu",
     require => Class['::rabbitmq']
   }
