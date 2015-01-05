@@ -20,7 +20,7 @@ class role_sensu::server (
     api               => true,
     api_user          => $api_user,
     api_password      => $api_password,
-    use_embedded_ruby => true,
+    use_embedded_ruby => true,                 # if false you need add this before every command: /opt/sensu/embedded/bin/ruby
   }
   
   # Create checks hiera yaml input
