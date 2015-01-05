@@ -27,11 +27,6 @@ class role_sensu::server (
   
   class { 'role_sensu::handlers': }
   
-  # Example handler
-  sensu::handler { 'default':
-    command => 'echo "sensu alert" >> /tmp/sensu.log',
-  }
-  
   # Download sensu community plugins
   vcsrepo { '/opt/sensu-community-plugins':
     ensure   => present,
