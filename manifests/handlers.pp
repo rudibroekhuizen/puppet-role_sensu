@@ -14,7 +14,6 @@ class role_sensu::handlers {
   }
 
   sensu::handler { 'mailer':
-    type    => 'pipe',
     command => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
     config  => {
       mail_from    => "sensu@naturalis.nl",
