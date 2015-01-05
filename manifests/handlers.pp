@@ -2,10 +2,10 @@
 #
 class role_sensu::handlers {
 
-  package { 'mail':
-    ensure   => installed,
-    provider => 'gem'
-  }
+  #package { 'mail':
+  #  ensure   => installed,
+  #  provider => 'gem'
+  #}
 
   sensu::handler { 'mailer':
     type        => 'pipe',
