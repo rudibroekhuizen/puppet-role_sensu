@@ -2,10 +2,11 @@
 #
 class role_sensu::handlers {
 
-  #package { 'mail':
-  #  ensure   => installed,
-  #  provider => 'gem'
-  #}
+  package { mail:
+    ensure          => installed,
+    provider        => gem,
+    install_options => [{"--install-dir" => "/opt/sensu/embedded/lib/ruby/gems/2.0.0/gems","-v" => "2.5.4"}],
+  } 
 
   sensu::handler { 'default':
     command => 'echo "sensu alert" >> /tmp/sensu.log',
