@@ -17,7 +17,7 @@ class role_sensu::handlers {
     type    => 'pipe',
     command => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
     config  => {
-      mail_from    => "sensu-rudi@naturalis.nl",
+      mail_from    => "sensu@naturalis.nl",
       mail_to      => "rudi.broekhuizen@naturalis.nl",
       smtp_address => "aspmx.l.google.com",
       smtp_port    => 25,
