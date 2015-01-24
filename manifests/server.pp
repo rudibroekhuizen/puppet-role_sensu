@@ -23,12 +23,6 @@ class role_sensu::server (
     use_embedded_ruby => true,  # /opt/sensu/embedded/bin/ruby 
   }
   
-  # Create checks hiera yaml input
-  class { 'role_sensu::checks': }
-  
-  # Create handlers
-  class { 'role_sensu::handlers': }
-  
   # Download sensu community plugins
   vcsrepo { '/opt/sensu-community-plugins':
     ensure   => present,
@@ -36,4 +30,12 @@ class role_sensu::server (
     source   => 'git://github.com/sensu/sensu-community-plugins',
   }
   
+  # Create checks hiera yaml input
+  class { 'role_sensu::checks':
+  }
+  
+  # Create handlers
+  class { 'role_sensu::handlers':
+  }
+
 }
