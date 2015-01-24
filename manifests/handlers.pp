@@ -6,7 +6,7 @@ class role_sensu::handlers {
   package { mail:
     ensure          => "2.5.4",
     provider        => gem,
-    install_options => [{"--install-dir" => "/opt/sensu/embedded/lib/ruby/gems/2.0.0/gems"}],
+    install_options => [{"--install-dir" => "/opt/sensu/embedded/lib/ruby/gems/2.0.0"}],
   } 
 
   sensu::handler { 'default':
