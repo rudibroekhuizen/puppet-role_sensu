@@ -3,13 +3,14 @@
 class role_sensu::client (
   $rabbitmq_password = 'secret',
   $sensu_server      = '172.16.3.15',
+  $subscriptions     = 'sub-001',
   ) {
   
   class { 'sensu':
-    rabbitmq_password    => $rabbitmq_password,
-    rabbitmq_host        => $sensu_server,
-    rabbitmq_vhost       => '/sensu',
-    subscriptions        => 'sensu-test-rudi',
+    rabbitmq_vhost    => '/sensu',
+    rabbitmq_password => $rabbitmq_password,
+    rabbitmq_host     => $sensu_server,
+    subscriptions     => $subscriptions,
   }
  
   vcsrepo { '/opt/sensu-community-plugins':
