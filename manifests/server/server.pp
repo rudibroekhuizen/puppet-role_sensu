@@ -6,7 +6,7 @@ class role_sensu::server::server (
   ) {
   include role_sensu
   
-  #$rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
+  $rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
   
   class { 'redis': } ->
 
