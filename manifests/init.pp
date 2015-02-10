@@ -37,7 +37,6 @@
 #
 class role_sensu (
   $data_source = '
----
 role_sensu::server::rabbitmq::rabbitmq_password:
   secret
 
