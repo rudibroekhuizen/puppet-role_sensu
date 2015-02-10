@@ -134,7 +134,7 @@ role_sensu::checks::checks_hash:
     
   check-http_iawa_website_org:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://iawa-website.org/ -q \'IAWA: The International Association\'"
-    subscribers: 'sub-001'
+    subscribers: "sub-001"
     
   check-http_seedlists_naturalis_nl:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://seedlists.naturalis.nl/ -q \'Seed lists\'"
