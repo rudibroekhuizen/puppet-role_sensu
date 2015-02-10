@@ -31,7 +31,7 @@ class role_sensu::server::server (
   }
   
   # Create checks hiera yaml input
-  class { 'role_sensu::server::checks':
+  class { 'role_sensu::checks':
   }
   
   # Create handlers
