@@ -1,7 +1,6 @@
 # == Class: role_sensu::server::server
 #
 class role_sensu::server::server (
-  $rabbitmq_password = $role_sensu::server::rabbitmq::rabbitmq_password,
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
@@ -18,7 +17,7 @@ class role_sensu::server::server (
     server            => true,
     manage_services   => true,
     manage_user       => true,
-    rabbitmq_password => $rabbitmq_password,
+    rabbitmq_password => $role_sensu::server::rabbitmq::rabbitmq_password,
     rabbitmq_vhost    => '/sensu',
     api               => true,
     api_user          => $api_user,
