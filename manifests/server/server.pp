@@ -6,8 +6,8 @@ class role_sensu::server::server (
   ) {
  
   
-  $bla = role_sensu::server::rabbitmq::rabbitmq_password
-  
+  $bla = $role_sensu::server::rabbitmq::rabbitmq_password
+  notice( "$bla" ) 
   notice( "$role_sensu::server::rabbitmq::rabbitmq_password" ) 
  
   class { 'redis': } ->
