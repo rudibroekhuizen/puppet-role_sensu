@@ -1,6 +1,6 @@
-# == Class: role_sensu::dashboard
+# == Class: role_sensu::server::dashboard
 #
-class role_sensu::dashboard (
+class role_sensu::server::dashboard (
   $uchiwa_api_config = [ { name     => 'DATACENTER-01',
                            host     => 'localhost',
                            ssl      => false,

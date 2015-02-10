@@ -1,6 +1,6 @@
-# == Class: role_sensu::handlers
+# == Class: role_sensu::server::handlers
 #
-class role_sensu::handlers {
+class role_sensu::server::handlers {
 
   # Needed by mailer handler: /opt/sensu/embedded/bin/gem install mail --no-ri --no-rdoc -v 2.5.4 
   package { mail:
