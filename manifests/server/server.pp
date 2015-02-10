@@ -3,7 +3,7 @@
 class role_sensu::server::server (
   $api_user          = 'api_user',
   $api_password      = 'secret',
-  ) inherits role_sensu::server::rabbitmq {
+  ) {
  
   
   notice( "$role_sensu::server::rabbitmq::rabbitmq_password" ) 
