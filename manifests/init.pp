@@ -35,7 +35,14 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_sensu {
+class role_sensu (
+  $data_source = '
+---
+role_sensu::server::server::rabbitmq_password:
+  secret
+---
+') {
 
+  $parameters = parseyaml($data_source)
 
 }
