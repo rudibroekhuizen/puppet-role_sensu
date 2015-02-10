@@ -1,6 +1,6 @@
-# == Class: role_sensu::server
+# == Class: role_sensu::server::server
 #
-class role_sensu::server (
+class role_sensu::server::server (
   $rabbitmq_password = 'secret',
   $api_user          = 'api_user',
   $api_password      = 'secret',
@@ -8,7 +8,7 @@ class role_sensu::server (
 
   class { 'redis': } ->
 
-  class { 'role_sensu::rabbitmq': } ->
+  class { 'role_sensu::server::rabbitmq': } ->
 
   class { 'sensu':
     install_repo      => true,
@@ -31,11 +31,11 @@ class role_sensu::server (
   }
   
   # Create checks hiera yaml input
-  class { 'role_sensu::checks':
+  class { 'role_sensu::server::checks':
   }
   
   # Create handlers
-  class { 'role_sensu::handlers':
+  class { 'role_sensu::server::handlers':
   }
 
 }
