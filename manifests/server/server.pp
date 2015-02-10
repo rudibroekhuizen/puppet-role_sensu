@@ -10,7 +10,7 @@ class role_sensu::server::server (
  
   class { 'redis': } ->
 
-  class { 'role_sensu::server::rabbitmq': } ->
+  #class { 'role_sensu::server::rabbitmq': } ->
 
   class { 'sensu':
     install_repo      => true,
