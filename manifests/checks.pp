@@ -1,7 +1,7 @@
 # == Class: role_sensu::checks
 #
 class role_sensu::checks (
-  $checks_hash,
+  $checks_hash = $role_sensu::parameters['role_sensu::checks::checks_hash'],
   $checks_defaults = $role_sensu::parameters['role_sensu::checks::checks_defaults'],
   ){
 
