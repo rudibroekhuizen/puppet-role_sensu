@@ -1,7 +1,7 @@
 # == Class: role_sensu::server::server
 #
 class role_sensu::server::server (
-  $rabbitmq_password = $role_sensu::parameters['role_sensu::rabbitmq_password'],
+  $rabbitmq_password = $role_sensu::parameters['role_sensu::server::rabbitmq_password'],
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
