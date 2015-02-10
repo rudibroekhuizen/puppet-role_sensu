@@ -6,7 +6,7 @@ class role_sensu::server::server (
   ) {
   include role_sensu
   
-  $rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
+  #$rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
   
   class { 'redis': } ->
 
@@ -17,7 +17,7 @@ class role_sensu::server::server (
     server            => true,
     manage_services   => true,
     manage_user       => true,
-    rabbitmq_password => $rabbitmq_password,
+    rabbitmq_password => $::rabbitmq_password,
     rabbitmq_vhost    => '/sensu',
     api               => true,
     api_user          => $api_user,
