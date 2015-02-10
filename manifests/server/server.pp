@@ -1,11 +1,11 @@
 # == Class: role_sensu::server::server
 #
 class role_sensu::server::server (
-  $rabbitmq_password = $role_sensu::server::rabbitmq::rabbitmq_password,
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
  
+  $rabbitmq_password = $role_sensu::server::rabbitmq::rabbitmq_password,
   notice( "$role_sensu::server::rabbitmq::rabbitmq_password" ) 
  
   class { 'redis': } ->
