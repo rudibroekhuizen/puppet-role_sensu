@@ -5,7 +5,8 @@ class role_sensu::server::server (
   $api_password      = 'secret',
   ) {
  
-  bla = $role_sensu::server::rabbitmq::rabbitmq_password
+  
+  $bla = role_sensu::server::rabbitmq::rabbitmq_password
   
   notice( "$role_sensu::server::rabbitmq::rabbitmq_password" ) 
  
