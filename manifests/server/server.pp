@@ -6,7 +6,7 @@ class role_sensu::server::server (
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
-  
+  include role_test
   notice( "$role_sensu::parameters['role_sensu::server::rabbitmq_password']" )
   
   class { 'redis': } ->
