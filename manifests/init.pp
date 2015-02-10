@@ -37,6 +37,7 @@
 #
 class role_sensu (
   $data_source = '
+---
 role_sensu::server::rabbitmq::rabbitmq_password:
   secret
 
@@ -154,7 +155,7 @@ role_sensu::checks::checks_hash:
   check-http_doneren_naturalis_nl:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url https://doneren.naturalis.nl/Form -q 'Doneren'"
     subscribers: "sub-001"
----
+    
 ') {
 
   $parameters = parseyaml($data_source)
