@@ -9,7 +9,7 @@ class role_sensu::server::server (
   
   include role_sensu
   
-  #notice( "$role_sensu::parameters['role_sensu::server::rabbitmq_password']" )
+  notice( "$::parameters['role_sensu::server::rabbitmq_password']" )
   
   class { 'redis': } ->
 
