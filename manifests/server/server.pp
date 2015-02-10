@@ -1,21 +1,25 @@
 # == Class: role_sensu::server::server
 #
 class role_sensu::server::server (
-  $rabbitmq_password = 'secret',
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
-
+ 
+  
+  $bla = $role_sensu::server::rabbitmq::rabbitmq_password
+  notice( "$bla" ) 
+  notice( "$role_sensu::server::rabbitmq::rabbitmq_password" ) 
+ 
   class { 'redis': } ->
 
-  class { 'role_sensu::server::rabbitmq': } ->
+  #class { 'role_sensu::server::rabbitmq': } ->
 
   class { 'sensu':
     install_repo      => true,
     server            => true,
     manage_services   => true,
     manage_user       => true,
-    rabbitmq_password => $rabbitmq_password,
+    rabbitmq_password => 'bla',
     rabbitmq_vhost    => '/sensu',
     api               => true,
     api_user          => $api_user,

@@ -35,7 +35,14 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_sensu {
+class role_sensu (
+  $data_source = '
+---
+role_test::configfile:
+  example.yaml
+---
+') {
 
+  $parameters = parseyaml($data_source)
 
 }
