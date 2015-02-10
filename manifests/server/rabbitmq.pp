@@ -1,8 +1,8 @@
-# == Class: role_sensu::rabbitmq
+# == Class: role_sensu::server::rabbitmq
 #
 # Based on https://github.com/sensu/sensu-puppet/blob/master/tests/rabbitmq.sh
 #
-class role_sensu::rabbitmq (
+class role_sensu::server::rabbitmq (
   $rabbitmq_password = 'secret', 
   ) {
 
