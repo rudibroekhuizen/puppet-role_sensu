@@ -159,5 +159,8 @@ role_sensu::checks::checks_hash:
 ') {
 
   $parameters = parseyaml($data_source)
+  notice( "$data_source" )
+  notice( "$parameters" ) 
+  notice( "$configfile" )
 
 }
