@@ -3,11 +3,10 @@
 class role_sensu::server::server (
   $api_user          = 'api_user',
   $api_password      = 'secret',
-  $rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
   ) {
   
   include role_sensu
-  #$rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
+  $rabbitmq_password = $role_sensu::parameters['role_sensu::server::server::rabbitmq_password']
   
   class { 'redis': } ->
 
