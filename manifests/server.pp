@@ -1,6 +1,6 @@
-# == Class: role_sensu::server::server
+# == Class: role_sensu::server
 #
-class role_sensu::server::server (
+class role_sensu::server (
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
