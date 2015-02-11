@@ -43,7 +43,7 @@ class role_sensu (
     class { 'role_sensu::server': }
   
   } elsif $mode == "client" {
-      class { 'burp::client': 
+      class { 'role_sensu::client': 
       }
 
     } else {
