@@ -35,4 +35,19 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_sensu
+class role_sensu (
+  $mode = "client",
+  ) {
+  
+  if $mode == "server" {
+    class { 'role_sensu::server': }
+  
+  } elsif $mode == "client" {
+      class { 'burp::client': 
+      }
+
+    } else {
+        fail ( "unknown mode" )
+  }
+  
+}
