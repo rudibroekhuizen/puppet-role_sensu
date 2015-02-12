@@ -30,6 +30,10 @@ role_sensu::checks::checks_hash:
       - default
       - mailer
   
+  check-http_uchiwa:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://10.41.3.48:3000/#/events -q \'Events\'"
+    subscribers: "sub-001"
+  
   check-disk:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/system/check-disk.rb"
     subscribers: "sub-001"
