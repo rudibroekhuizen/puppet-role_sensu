@@ -2,15 +2,15 @@
 #
 class role_sensu::dashboard (
   $uchiwa_api_config = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_api_config'],
- #$uchiwa_api_config = [ { name     => 'DATACENTER-01',
- #                         host     => 'localhost',
- #                         ssl      => false,
- #                         insecure => false,
- #                         port     => 4567,
- #                         user     => 'api_user',  #api_user
- #                         pass     => 'secret', #api_password
- #                         timeout  => 5
- #                        } ],
+ # $uchiwa_api_config = [ { name     => 'DATACENTER-01',
+ #                          host     => 'localhost',
+ #                          ssl      => false,
+ #                          insecure => false,
+ #                          port     => 4567,
+ #                          user     => 'api_user',  #api_user
+ #                          pass     => 'secret', #api_password
+ #                          timeout  => 5
+ #                         } ],
   $uchiwa_user = 'admin',
   $uchiwa_pass = 'secret',
   ) {
