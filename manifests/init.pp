@@ -36,7 +36,6 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_sensu (
-  $comment = "All parameters are managed by the role_sensu::yaml parameter.",
   $mode    = "changeme",
   ) {
   include role_sensu::yaml            # load yaml file if hiera is not available (the Foreman for example)
