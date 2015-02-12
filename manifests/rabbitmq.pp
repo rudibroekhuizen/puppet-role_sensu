@@ -1,9 +1,7 @@
 # == Class: role_sensu::rabbitmq
 #
-# Based on https://github.com/sensu/sensu-puppet/blob/master/tests/rabbitmq.sh
-#
 class role_sensu::rabbitmq (
-  $rabbitmq_password = 'secret', 
+  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::rabbitmq::rabbitmq_password'], 
   ) {
 
   Exec { 
@@ -39,3 +37,5 @@ class role_sensu::rabbitmq (
   }    
 
 }
+
+# Based on https://github.com/sensu/sensu-puppet/blob/master/tests/rabbitmq.sh
