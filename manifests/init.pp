@@ -39,7 +39,7 @@ class role_sensu (
   $mode = "server",
   ) {
   include role_sensu::yaml
-  #include apt
+  include apt                         #this solves error "class apt has not been evaluated"
   
   if $mode == "server" {
     class { 'role_sensu::server': }
