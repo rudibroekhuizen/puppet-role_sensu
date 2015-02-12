@@ -1,7 +1,7 @@
 # == Class: role_sensu::client
 #
 class role_sensu::client (
-  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::server::rabbitmq_password'],
+  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::client::rabbitmq_password'],
   $sensu_server      = $role_sensu::yaml::parameters['role_sensu::client::sensu_server'],
   $subscriptions     = $role_sensu::yaml::parameters['role_sensu::client::subscriptions'],
   ) {
