@@ -3,24 +3,6 @@
 class role_sensu::yaml (
   $yaml = '
 ---
-role_sensu::rabbitmq::rabbitmq_password:
-  secret
-
-role_sensu::server::rabbitmq_password:
-  secrettt
-
-role_sensu::server::api_user:
-  api_user
-  
-role_sensu::server::api_password:
-  secret
-  
-role_sensu::dashboard::uchiwa_user:
-  ictsupport
-  
-role_sensu::dashboard::uchiwa_pass:
-  ictsupport
-
 role_sensu::dashboard::uchiwa_api_config:
   - name: ICTSUPPORT
     host: localhost
@@ -120,7 +102,7 @@ role_sensu::checks::checks_hash:
   check-http_doneren_naturalis_nl:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url https://doneren.naturalis.nl/Form -q \'Doneren\'"
     subscribers: "sub-001"
-
+---
 
 
 ') {
