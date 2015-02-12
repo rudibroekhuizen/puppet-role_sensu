@@ -12,7 +12,7 @@ class role_sensu::server (
   
   class { 'redis': } ->
 
-  class { 'role_sensu::server::rabbitmq': } ->
+  class { 'role_sensu::rabbitmq': } ->
 
   class { 'sensu':
     install_repo      => true,
@@ -39,7 +39,7 @@ class role_sensu::server (
   }
   
   # Create handlers
-  class { 'role_sensu::server::handlers':
+  class { 'role_sensu::handlers':
   }
 
 }
