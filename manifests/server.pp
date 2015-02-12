@@ -5,10 +5,6 @@ class role_sensu::server (
   $api_user          = 'api_user',
   $api_password      = 'secret',
   ) {
-  #include role_sensu
-  
-  
-  #$rabbitmq_password = $::rabbitmq_password
   
   class { 'redis': } ->
 
