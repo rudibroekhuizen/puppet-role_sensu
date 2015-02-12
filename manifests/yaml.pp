@@ -14,6 +14,9 @@ role_sensu::dashboard::uchiwa_api_config:
     timeout: 5
 
 role_sensu::checks::checks_defaults:
+  interval: 60
+  occurrences: 3
+  refresh: 15
   handlers:
     - default
     - mailer
