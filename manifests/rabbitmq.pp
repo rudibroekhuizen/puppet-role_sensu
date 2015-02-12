@@ -1,7 +1,7 @@
 # == Class: role_sensu::rabbitmq
 #
 class role_sensu::rabbitmq (
-  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::rabbitmq::rabbitmq_password'], 
+  $rabbitmq_password = 'secret', 
   ) {
 
   Exec { 
