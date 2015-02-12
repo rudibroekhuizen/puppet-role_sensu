@@ -6,6 +6,8 @@ class role_sensu::server (
   $api_password      = 'secret',
   ) {
   
+  notice( "$role_sensu::parameters['role_sensu::server::rabbitmq_password']" )
+  
   class { 'redis': } ->
 
   class { 'role_sensu::rabbitmq': } ->
