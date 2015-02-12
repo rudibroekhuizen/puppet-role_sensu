@@ -11,7 +11,7 @@ class role_sensu::dashboard (
     sensu_api_endpoints => $uchiwa_api_config,
     user                => $uchiwa_user,
     pass                => $uchiwa_pass,
-    install_repo        => false            # otherwise you get this: Apt::Source[sensu] is already declared in file /etc/puppet/modules/sensu/manifests/repo/apt.ppp
+    install_repo        => false            # otherwise you get this: Apt::Source[sensu] is already declared in file /etc/puppet/modules/sensu/manifests/repo/apt.pp
   }
 
 }
