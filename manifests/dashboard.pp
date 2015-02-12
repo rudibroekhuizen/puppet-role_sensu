@@ -11,6 +11,7 @@ class role_sensu::dashboard (
     sensu_api_endpoints => $uchiwa_api_config,
     user                => $uchiwa_user,
     pass                => $uchiwa_pass,
+    install_repo        => false
   }
 
 }
