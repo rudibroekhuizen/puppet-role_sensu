@@ -3,25 +3,25 @@
 class role_sensu::yaml (
   $yaml = '
 ---
-role_sensu::server::rabbitmq::rabbitmq_password:
+role_sensu::rabbitmq::rabbitmq_password:
   secret
 
-role_sensu::server::server::rabbitmq_password:
+role_sensu::server::rabbitmq_password:
   secret
 
-role_sensu::server::server::api_user:
+role_sensu::server::api_user:
   api_user
   
-role_sensu::server::server::api_password:
+role_sensu::server::api_password:
   secret
   
-role_sensu::server::dashboard::uchiwa_user:
+role_sensu::dashboard::uchiwa_user:
   ictsupport
   
-role_sensu::server::dashboard::uchiwa_pass:
+role_sensu::dashboard::uchiwa_pass:
   ictsupport
 
-role_sensu::server::dashboard::uchiwa_api_config:
+role_sensu::dashboard::uchiwa_api_config:
   - name: ICTSUPPORT
     host: localhost
     ssl: false
