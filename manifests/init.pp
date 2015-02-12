@@ -36,8 +36,9 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_sensu (
-  $mode = "client",
+  $mode = "server",
   ) {
+  include role_sensu::yaml
   
   if $mode == "server" {
     class { 'role_sensu::server': }
