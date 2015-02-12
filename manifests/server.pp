@@ -37,5 +37,9 @@ class role_sensu::server (
   # Create handlers
   class { 'role_sensu::handlers':
   }
-
+  
+   # Install uchiwa webinterface
+  class { 'role_sensu::dashboard':
+  }
+  
 }
