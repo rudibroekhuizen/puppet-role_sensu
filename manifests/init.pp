@@ -46,8 +46,7 @@ class role_sensu (
     class { 'role_sensu::server': }
   
   } elsif $mode == "client" {
-      class { 'role_sensu::client': 
-      }
+      class { 'role_sensu::client': }
 
     } else {
         fail ( "set mode option: client or server" )
