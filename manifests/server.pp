@@ -1,9 +1,9 @@
 # == Class: role_sensu::server
 #
 class role_sensu::server (
-  $rabbitmq_password = 'secret',
-  $api_user          = 'api_user',
-  $api_password      = 'secret',
+  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::server::rabbitmq_password'],
+  $api_user          = $role_sensu::yaml::parameters['role_sensu::server::api_user '],
+  $api_password      = $role_sensu::yaml::parameters['role_sensu::server::api_password'],
   ) {
   
   class { 'redis': } ->
