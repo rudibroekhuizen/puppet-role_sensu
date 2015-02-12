@@ -2,7 +2,7 @@
 #
 class role_sensu::server (
   $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::server::rabbitmq_password'],
-  $api_user          = $role_sensu::yaml::parameters['role_sensu::server::api_user '],
+  $api_user          = $role_sensu::yaml::parameters['role_sensu::server::api_user'],
   $api_password      = $role_sensu::yaml::parameters['role_sensu::server::api_password'],
   ) {
   
