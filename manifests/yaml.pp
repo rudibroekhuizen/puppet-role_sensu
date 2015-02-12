@@ -121,10 +121,10 @@ role_sensu::checks::checks_hash:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url https://doneren.naturalis.nl/Form -q \'Doneren\'"
     subscribers: "sub-001"
 
-') {
 
-  $parameters = parseyaml($data_source)
+
+') {
+  $parameters = parseyaml($role_sensu::yaml::yaml)
   #notice( "$yaml" )
   #notice( "$parameters" ) 
-
 }
