@@ -39,7 +39,7 @@ class role_sensu (
   $mode = "server",
   ) {
   include role_sensu::yaml
-  include apt
+  #include apt
   
   if $mode == "server" {
     class { 'role_sensu::server': }
