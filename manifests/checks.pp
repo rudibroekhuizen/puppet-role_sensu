@@ -7,8 +7,3 @@ class role_sensu::checks (
 
   create_resources('sensu::check', $checks_hash, $checks_defaults)
 }
-
-
-# If hiera is available:
-# $checks_hash,
-# $checks_defaults,
