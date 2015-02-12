@@ -7,7 +7,7 @@ role_sensu::rabbitmq::rabbitmq_password:
   secret
 
 role_sensu::server::rabbitmq_password:
-  secret
+  secrettt
 
 role_sensu::server::api_user:
   api_user
