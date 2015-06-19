@@ -38,8 +38,9 @@
 class role_sensu (
   $mode = "changeme",
   ) {
-  include role_sensu::yaml            # load yaml file if hiera is not available (the Foreman for example)
-  include apt                         # this solves error "class apt has not been evaluated"
+  
+  # this solves error "class apt has not been evaluated":
+  include apt
   
   if $mode == "server" {
     class { 'role_sensu::server': }
