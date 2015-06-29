@@ -38,22 +38,29 @@
 class role_sensu (
   # General
   $mode              = "changeme",
-  $rabbitmq_password = 
+  $rabbitmq_password = "password",
   
   # Client
-  $sensu_server      = $role_sensu::yaml::parameters['role_sensu::client::sensu_server'],
-  $subscriptions     = $role_sensu::yaml::parameters['role_sensu::client::subscriptions'],
+  $sensu_server      = "172.16.3.15",
+  $subscriptions     = "sub-001",
   
   # Server
-  $api_user          = $role_sensu::yaml::parameters['role_sensu::server::api_user'],
-  $api_password      = $role_sensu::yaml::parameters['role_sensu::server::api_password'],
+  $api_user          = "api_user",
+  $api_password      = "password",
   
   # Dashboard
-  $uchiwa_api_config = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_api_config'],
-  $uchiwa_user       = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_user'],
-  $uchiwa_pass       = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_pass'],
-  
-  
+  $uchiwa_api_config = $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
+                                                host      => '10.16.1.25',
+                                                ssl       => false,
+                                                insecure  => false,
+                                                port      => 4567,
+                                                user      => 'sensu',
+                                                pass      => 'password',
+                                                timeout   => 5
+                                              }
+                                            ],
+  $uchiwa_user       = undef,
+  $uchiwa_pass       = undef,
   ) {
   
   # this solves error "class apt has not been evaluated":
