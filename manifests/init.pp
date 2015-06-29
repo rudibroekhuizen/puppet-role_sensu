@@ -45,8 +45,19 @@ class role_sensu (
   $subscriptions     = "sub-001",
   
   # Server
-  $api_user          = "api_user",
-  $api_password      = "password",
+  $api_user        = "api_user",
+  $api_password    = "password",
+  $checks_defaults = { interval    => 600,
+                       occurrences => 3,
+                       refresh     => 60,
+                       handlers    => [ 'default', 'mailer' ],
+                       standalone  => false,
+                     },
+  $checks_hash = { 'check_file_test' => { command      => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
+                                          subscribers  => 'sub-001',
+                                          handlers     => [ 'mailer' ],
+                                        },
+  }
   
   # Dashboard
   $uchiwa_api_config = $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
