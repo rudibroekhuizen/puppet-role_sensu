@@ -46,9 +46,9 @@ management, etc.) this is the time to mention it.
 
 * https://forge.puppetlabs.com/sensu/sensu
 * https://forge.puppetlabs.com/arioch/redis
-* https://forge.puppetlabs.com/yelp/uchiwa
 * https://forge.puppetlabs.com/puppetlabs/rabbitmq
 * https://forge.puppetlabs.com/nanliu/staging
+* git clone -b fix_apt_version https://github.com/Yelp/puppet-uchiwa uchiwa
 
 ### Beginning with role_sensu
 
