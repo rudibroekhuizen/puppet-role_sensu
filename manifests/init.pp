@@ -41,7 +41,7 @@ class role_sensu (
   $rabbitmq_password = "password",
   
   # Client
-  $sensu_server      = "172.16.3.15",
+  $sensu_server      = "172.16.3.11",
   $subscriptions     = "sub-001",
   
   # Server
