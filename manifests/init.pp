@@ -59,9 +59,9 @@ class role_sensu (
                                         },
                  },
   
-  # Dashboard
+  # Dashboard (runs on server)
   $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
-                           host      => '10.16.1.25',
+                           host      => 'localhost',
                            ssl       => false,
                            insecure  => false,
                            port      => 4567,
