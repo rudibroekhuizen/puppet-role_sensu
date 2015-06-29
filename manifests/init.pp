@@ -60,16 +60,16 @@ class role_sensu (
                  },
   
   # Dashboard
-  $uchiwa_api_config = $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
-                                                host      => '10.16.1.25',
-                                                ssl       => false,
-                                                insecure  => false,
-                                                port      => 4567,
-                                                user      => 'sensu',
-                                                pass      => 'password',
-                                                timeout   => 5
-                                              }
-                                            ],
+  $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
+                           host      => '10.16.1.25',
+                           ssl       => false,
+                           insecure  => false,
+                           port      => 4567,
+                           user      => 'sensu',
+                           pass      => 'password',
+                           timeout   => 5
+                         }
+                       ],
   $uchiwa_user = undef,
   $uchiwa_pass = undef,
   ) {
