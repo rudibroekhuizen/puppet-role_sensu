@@ -36,7 +36,24 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_sensu (
-  $mode = "changeme",
+  # General
+  $mode              = "changeme",
+  $rabbitmq_password = 
+  
+  # Client
+  $sensu_server      = $role_sensu::yaml::parameters['role_sensu::client::sensu_server'],
+  $subscriptions     = $role_sensu::yaml::parameters['role_sensu::client::subscriptions'],
+  
+  # Server
+  $api_user          = $role_sensu::yaml::parameters['role_sensu::server::api_user'],
+  $api_password      = $role_sensu::yaml::parameters['role_sensu::server::api_password'],
+  
+  # Dashboard
+  $uchiwa_api_config = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_api_config'],
+  $uchiwa_user       = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_user'],
+  $uchiwa_pass       = $role_sensu::yaml::parameters['role_sensu::dashboard::uchiwa_pass'],
+  
+  
   ) {
   
   # this solves error "class apt has not been evaluated":
