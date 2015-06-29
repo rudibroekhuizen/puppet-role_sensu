@@ -1,16 +1,12 @@
 # == Class: role_sensu::client
 #
-class role_sensu::client (
-  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::client::rabbitmq_password'],
-  $sensu_server      = $role_sensu::yaml::parameters['role_sensu::client::sensu_server'],
-  $subscriptions     = $role_sensu::yaml::parameters['role_sensu::client::subscriptions'],
-  ) {
+class role_sensu::client {
   
   class { 'sensu':
     rabbitmq_vhost    => '/sensu',
-    rabbitmq_password => $rabbitmq_password,
-    rabbitmq_host     => $sensu_server,
-    subscriptions     => $subscriptions,
+    rabbitmq_password => $role_sensu::rabbitmq_password,
+    rabbitmq_host     => $role_sensu::sensu_server,
+    subscriptions     => $role_sensu::subscriptions,
   }
  
   vcsrepo { '/opt/sensu-community-plugins':
