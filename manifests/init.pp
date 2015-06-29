@@ -37,7 +37,7 @@
 #
 class role_sensu (
   # General
-  $mode              = "changeme",
+  $mode              = "server",
   $rabbitmq_password = "password",
   
   # Client
