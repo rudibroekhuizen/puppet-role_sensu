@@ -1,8 +1,6 @@
 # == Class: role_sensu::rabbitmq
 #
-class role_sensu::rabbitmq (
-  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::rabbitmq::rabbitmq_password'], 
-  ) {
+class role_sensu::rabbitmq {
 
   Exec { 
     path => [ "/opt/rabbitmq/sbin", "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ]
@@ -19,7 +17,7 @@ class role_sensu::rabbitmq (
   }
 
   exec { "user-sensu":
-    command => "rabbitmqctl add_user sensu $rabbitmq_password",
+    command => "rabbitmqctl add_user sensu $role_sensu::rabbitmq_password",
     unless  => "rabbitmqctl list_users | grep sensu",
     require => Class['::rabbitmq']
   }
