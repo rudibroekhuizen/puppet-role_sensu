@@ -65,7 +65,7 @@ class role_sensu (
                            ssl       => false,
                            insecure  => false,
                            port      => 4567,
-                           user      => 'sensu',
+                           user      => 'api_user',
                            pass      => 'password',
                            timeout   => 5
                          }
