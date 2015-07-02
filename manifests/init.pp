@@ -40,11 +40,11 @@ class role_sensu (
   $mode              = "server",
   $rabbitmq_password = "password",
   
-  # Client
+# Client
   $sensu_server      = "172.16.3.11",
   $subscriptions     = "sub-001",
   
-  # Server: Sensu
+# Server: Sensu
   $api_user        = "api_user",
   $api_password    = "password",
   $checks_defaults = { interval    => 600,
