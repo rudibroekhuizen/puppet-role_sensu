@@ -9,19 +9,7 @@ class role_sensu::handlers {
     install_options => [{"--install-dir" => "/opt/sensu/embedded/lib/ruby/gems/2.0.0"}],
   } 
 
-  sensu::handler { 'default':
-    command => 'echo "sensu alert" >> /tmp/sensu.log',
-  }
+  # Configure handlers 
+  create_resources( 'sensu::handler', $role_sensu::handlers_hash )
 
-  sensu::handler { 'mailer':
-    command => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
-    config  => {
-      admin_gui    => "http://10.41.3.59:3000",
-      mail_from    => "sensu@naturalis.nl",
-      mail_to      => "rudi.broekhuizen@naturalis.nl",
-      smtp_address => "aspmx.l.google.com",
-      smtp_port    => 25,
-      smtp_domain  => "naturalis.nl",
-    },
-  }
 }
