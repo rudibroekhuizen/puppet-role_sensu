@@ -55,7 +55,7 @@ class role_sensu (
                      },
   $checks_hash     = { 'check_file_test' => { command      => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
                                               subscribers  => 'sub-001',
-                                              handlers     => [ 'mailer' ],
+                                              handlers     => [ 'default' ],
                                             },
                      },
   $handlers_hash   = { 'default' => { command => 'echo "sensu alert" >> /tmp/sensu.log',
