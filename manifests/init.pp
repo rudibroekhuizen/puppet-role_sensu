@@ -68,7 +68,8 @@ class role_sensu (
                                                    smtp_port    => 25,
                                                    smtp_domain  => "naturalis.nl",
                                                  },
-                     }, 
+                                    },
+                     },
   # Server: Uchiwa dashboard
   $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
                            host      => 'localhost',
