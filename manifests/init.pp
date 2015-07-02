@@ -60,6 +60,7 @@ class role_sensu (
                      },
   handlers_hash    = { 'default' => { command => 'echo "sensu alert" >> /tmp/sensu.log',
                                     },
+                                    
                        'mailer'  => { command => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
                                       config  => { admin_gui    => "http://10.41.3.59:3000",
                                                    mail_from    => "sensu@naturalis.nl",
@@ -70,6 +71,7 @@ class role_sensu (
                                                  },
                                     },
                      },
+                     
   # Server: Uchiwa dashboard
   $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
                            host      => 'localhost',
