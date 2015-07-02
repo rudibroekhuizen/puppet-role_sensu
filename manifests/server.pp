@@ -19,11 +19,16 @@ class role_sensu::server {
     use_embedded_ruby => true,  # /opt/sensu/embedded/bin/ruby 
   }
   
-  # Download sensu community plugins
+  # Install Git and download sensu community plugins
+  package { 'git':
+    ensure  => installed
+  }
+  
   vcsrepo { '/opt/sensu-community-plugins':
     ensure   => present,
     provider => git,
     source   => 'git://github.com/sensu/sensu-community-plugins',
+    require  => Package['git'],
   }
   
   # Create checks hiera yaml input
