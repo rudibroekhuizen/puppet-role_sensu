@@ -58,7 +58,7 @@ class role_sensu (
                                               handlers     => [ 'mailer' ],
                                             },
                      },
-  handlers_hash    = { 'default' => { command => 'echo "sensu alert" >> /tmp/sensu.log',
+  $handlers_hash   = { 'default' => { command => 'echo "sensu alert" >> /tmp/sensu.log',
                                     },
                                     
                        'mailer'  => { command => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
