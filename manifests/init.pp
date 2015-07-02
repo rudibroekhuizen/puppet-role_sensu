@@ -44,7 +44,7 @@ class role_sensu (
   $sensu_server      = "172.16.3.11",
   $subscriptions     = "sub-001",
   
-  # Server
+  # Server: Sensu
   $api_user        = "api_user",
   $api_password    = "password",
   $checks_defaults = { interval    => 600,
@@ -59,7 +59,7 @@ class role_sensu (
                                         },
                  },
   
-  # Dashboard (runs on server)
+  # Server: Uchiwa dashboard
   $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
                            host      => 'localhost',
                            ssl       => false,
