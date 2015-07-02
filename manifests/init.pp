@@ -39,12 +39,12 @@ class role_sensu (
   # General
   $mode              = "server",
   $rabbitmq_password = "password",
-  
-# Client
+
+  # Client
   $sensu_server      = "172.16.3.11",
   $subscriptions     = "sub-001",
-  
-# Server: Sensu
+
+  # Server: Sensu
   $api_user        = "api_user",
   $api_password    = "password",
   $checks_defaults = { interval    => 600,
@@ -58,7 +58,7 @@ class role_sensu (
                                           handlers     => [ 'mailer' ],
                                         },
                  },
-  
+
   # Server: Uchiwa dashboard
   $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
                            host      => 'localhost',
