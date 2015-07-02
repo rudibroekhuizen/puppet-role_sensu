@@ -36,10 +36,59 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_sensu (
-  $mode = "changeme",
+  # General
+  $mode              = "server",
+  $rabbitmq_password = "password",
+
+  # Client
+  $sensu_server  = "172.16.3.11",
+  $subscriptions = "sub-001",
+
+  # Server: Sensu
+  $api_user        = "api_user",
+  $api_password    = "password",
+  $checks_defaults = { interval    => 600,
+                       occurrences => 3,
+                       refresh     => 60,
+                       handlers    => [ 'default', 'mailer' ],
+                       standalone  => false,
+                     },
+  $checks_hash     = { 'check_file_test' => { command      => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
+                                              subscribers  => 'sub-001',
+                                              handlers     => [ 'default' ],
+                                            },
+                     },
+  $handlers_hash   = { 'default' => { command => 'echo "sensu alert" >> /tmp/sensu.log',
+                                    },
+                                    
+                       'mailer'  => { command => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/handlers/notification/mailer.rb',
+                                      config  => { admin_gui    => "http://10.41.3.59:3000",
+                                                   mail_from    => "sensu@naturalis.nl",
+                                                   mail_to      => "rudi.broekhuizen@naturalis.nl",
+                                                   smtp_address => "aspmx.l.google.com",
+                                                   smtp_port    => 25,
+                                                   smtp_domain  => "naturalis.nl",
+                                                 },
+                                    },
+                     },
+                     
+  # Server: Uchiwa dashboard
+  $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
+                           host      => 'localhost',
+                           ssl       => false,
+                           insecure  => false,
+                           port      => 4567,
+                           user      => 'api_user',
+                           pass      => 'password',
+                           timeout   => 5
+                         }
+                       ],
+  $uchiwa_user = undef,
+  $uchiwa_pass = undef,
   ) {
-  include role_sensu::yaml            # load yaml file if hiera is not available (the Foreman for example)
-  include apt                         # this solves error "class apt has not been evaluated"
+  
+  # this solves error "class apt has not been evaluated":
+  include apt
   
   if $mode == "server" {
     class { 'role_sensu::server': }

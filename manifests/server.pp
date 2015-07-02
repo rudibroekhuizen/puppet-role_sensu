@@ -1,10 +1,6 @@
 # == Class: role_sensu::server
 #
-class role_sensu::server (
-  $rabbitmq_password = $role_sensu::yaml::parameters['role_sensu::server::rabbitmq_password'],
-  $api_user          = $role_sensu::yaml::parameters['role_sensu::server::api_user'],
-  $api_password      = $role_sensu::yaml::parameters['role_sensu::server::api_password'],
-  ) {
+class role_sensu::server {
   
   class { 'redis': } ->
 
@@ -15,11 +11,11 @@ class role_sensu::server (
     server            => true,
     manage_services   => true,
     manage_user       => true,
-    rabbitmq_password => $rabbitmq_password,
+    rabbitmq_password => $role_sensu::rabbitmq_password,
     rabbitmq_vhost    => '/sensu',
     api               => true,
-    api_user          => $api_user,
-    api_password      => $api_password,
+    api_user          => $role_sensu::api_user,
+    api_password      => $role_sensu::api_password,
     use_embedded_ruby => true,  # /opt/sensu/embedded/bin/ruby 
   }
   
