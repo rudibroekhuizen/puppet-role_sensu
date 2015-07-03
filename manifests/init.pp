@@ -42,7 +42,9 @@ class role_sensu (
 
   # Client
   $sensu_server  = "172.16.3.11",
-  $subscriptions = "sub-001",
+  $subscriptions = [ 'check-procs-001',
+                     'check-http-001',
+                   ],
 
   # Server: Sensu
   $api_user        = "api_user",
@@ -50,13 +52,15 @@ class role_sensu (
   $checks_defaults = { interval    => 600,
                        occurrences => 3,
                        refresh     => 60,
-                       handlers    => [ 'default', 'mailer' ],
+                       handlers    => [ 'default',
+                                        'mailer'
+                                      ],
                        standalone  => false,
                      },
-  $checks_hash     = { 'check_file_test' => { command      => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
-                                              subscribers  => 'sub-001',
-                                              handlers     => [ 'default' ],
-                                            },
+  $checks_hash     = { 'check-procs_cron' => { command      => '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 ',
+                                               subscribers  => 'check-procs-001',
+                                               handlers     => [ 'default' ],
+                                             },
                      },
   $handlers_hash   = { 'default' => { command => 'echo "sensu alert" >> /tmp/sensu.log',
                                     },
