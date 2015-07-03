@@ -73,14 +73,14 @@ class role_sensu (
                      },
                      
   # Server: Uchiwa dashboard
-  $uchiwa_api_config = [ { name      => 'ICTSUPPORT',
-                           host      => 'localhost',
-                           ssl       => false,
-                           insecure  => false,
-                           port      => 4567,
-                           user      => 'api_user',
-                           pass      => 'password',
-                           timeout   => 5
+  $uchiwa_api_config = [ { name     => 'ICTSUPPORT',
+                           host     => 'localhost',
+                           ssl      => false,
+                           insecure => false,
+                           port     => 4567,
+                           user     => 'api_user',
+                           pass     => 'password',
+                           timeout  => 5
                          }
                        ],
   $uchiwa_user = undef,
