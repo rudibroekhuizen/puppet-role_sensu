@@ -39,6 +39,10 @@ class role_sensu::server {
   class { 'role_sensu::handlers':
   }
   
+  # Install plugins
+  class { 'role_sensu::plugins':
+  }
+  
    # Install uchiwa webinterface
   class { 'role_sensu::dashboard':
   }
