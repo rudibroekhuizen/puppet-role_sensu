@@ -9,10 +9,8 @@ class role_sensu::client {
     subscriptions     => $role_sensu::subscriptions,
   }
  
-  vcsrepo { '/opt/sensu-community-plugins':
-    ensure   => present,
-    provider => git,
-    source   => 'git://github.com/sensu/sensu-community-plugins',
+  # Install plugins
+  class { 'role_sensu::plugins':
   }
   
 }
