@@ -24,13 +24,6 @@ class role_sensu::server {
     ensure  => installed
   }
   
-  vcsrepo { '/opt/sensu-community-plugins':
-    ensure   => present,
-    provider => git,
-    source   => 'git://github.com/sensu/sensu-community-plugins',
-    require  => Package['git'],
-  }
-  
   # Create checks hiera yaml input
   class { 'role_sensu::checks':
   }
