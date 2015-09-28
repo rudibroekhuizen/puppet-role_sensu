@@ -46,6 +46,7 @@ class role_sensu (
                      'check-http-001',
                    ],
   $plugins_hash  = { 'sensu-plugins-network-checks' => { version => '0.0.5',
+                                                       },
                    },
 
   # Server: Sensu
