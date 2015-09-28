@@ -19,11 +19,6 @@ class role_sensu::server {
     use_embedded_ruby => true,  # /opt/sensu/embedded/bin/ruby 
   }
   
-  # Install Git and download sensu community plugins
-  package { 'git':
-    ensure  => installed
-  }
-  
   # Create checks hiera yaml input
   class { 'role_sensu::checks':
   }
