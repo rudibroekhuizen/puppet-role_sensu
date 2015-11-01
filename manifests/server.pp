@@ -19,24 +19,16 @@ class role_sensu::server {
     use_embedded_ruby => true,  # /opt/sensu/embedded/bin/ruby 
   }
   
-  # Install Git and download sensu community plugins
-  package { 'git':
-    ensure  => installed
-  }
-  
-  vcsrepo { '/opt/sensu-community-plugins':
-    ensure   => present,
-    provider => git,
-    source   => 'git://github.com/sensu/sensu-community-plugins',
-    require  => Package['git'],
-  }
-  
   # Create checks hiera yaml input
   class { 'role_sensu::checks':
   }
   
   # Create handlers
   class { 'role_sensu::handlers':
+  }
+  
+  # Install plugins
+  class { 'role_sensu::plugins':
   }
   
    # Install uchiwa webinterface

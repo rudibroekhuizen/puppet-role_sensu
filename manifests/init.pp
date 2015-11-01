@@ -45,6 +45,9 @@ class role_sensu (
   $subscriptions = [ 'check-procs-001',
                      'check-http-001',
                    ],
+  $plugins_hash  = { 'sensu-plugins-network-checks' => { version => '0.0.5',
+                                                       },
+                   },
 
   # Server: Sensu
   $api_user        = "api_user",
@@ -93,6 +96,11 @@ class role_sensu (
   
   # this solves error "class apt has not been evaluated":
   include apt
+  
+  # Required by gem installs
+  package { ruby-dev:
+    ensure   => present,
+  }
   
   if $mode == "server" {
     class { 'role_sensu::server': }
