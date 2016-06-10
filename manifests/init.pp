@@ -99,7 +99,10 @@ class role_sensu (
   
   # Required by gem installs
   package { ruby-dev:
-    ensure   => present,
+    ensure => present,
+  }
+  package { make:
+    ensure => present,
   }
   
   if $mode == "server" {
