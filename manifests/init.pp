@@ -90,8 +90,8 @@ class role_sensu (
                            timeout  => 5
                          }
                        ],
-  $uchiwa_user = undef,
-  $uchiwa_pass = undef,
+  $uchiwa_user = 'uchiwa',
+  $uchiwa_pass = 'changeme',
   ) {
   
   # this solves error "class apt has not been evaluated":
