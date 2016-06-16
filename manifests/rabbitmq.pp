@@ -8,7 +8,9 @@ class role_sensu::rabbitmq {
  
   rabbitmq_vhost { '/sensu': }
 
-  rabbitmq_user { 'sensu': password => $sensu_password }
+  rabbitmq_user { 'sensu': 
+    password => $role_sensu::rabbitmq_password
+  }
 
   rabbitmq_user_permissions { 'sensu@/sensu':
     configure_permission => '.*',
