@@ -18,7 +18,7 @@ class role_sensu::dashboard {
   }
 
   nginx::resource::vhost { 'sensu':
-    proxy       => 'http://localhost',
+    proxy       => 'http://localhost:3000',
     ssl         => true,
     listen_port => 443,
     ssl_cert    => '/etc/sensu/ssl/uchiwa.pem',
