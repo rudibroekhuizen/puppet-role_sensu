@@ -10,4 +10,19 @@ class role_sensu::dashboard {
     install_repo        => false            # otherwise you get this: Apt::Source[sensu] is already declared in file /etc/puppet/modules/sensu/manifests/repo/apt.pp
   }
 
+  # Using uchiwa ssl: "bind: permission denied", using nginx
+  class {'nginx': }
+
+  nginx::resource::upstream { 'sensu':
+    members => ['localhost:3000'],
+  }
+
+  nginx::resource::vhost { 'sensu':
+    proxy       => 'http://localhost',
+    ssl         => true,
+    listen_port => 443,
+    ssl_cert    => '/etc/sensu/ssl/uchiwa.pem',
+    ssl_key     => '/etc/sensu/ssl/uchiwa.key',
+  }
+
 }
