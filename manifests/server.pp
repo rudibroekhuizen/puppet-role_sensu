@@ -32,7 +32,7 @@ class role_sensu::server {
   }
   
    # Install uchiwa webinterface
-  class { 'role_sensu::uchiwa':
+  class { 'role_sensu::dashboard':
   }
   
 }
