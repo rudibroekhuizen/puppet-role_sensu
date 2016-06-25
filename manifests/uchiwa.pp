@@ -1,6 +1,6 @@
-# == Class: role_sensu::dashboard
+# == Class: role_sensu::uchiwa
 #
-class role_sensu::dashboard {
+class role_sensu::uchiwa {
 
   # Install uchiwa, username and password for uchiwa webinterface, port 3000.
   class { 'uchiwa':
