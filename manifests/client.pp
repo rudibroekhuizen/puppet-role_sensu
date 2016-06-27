@@ -1,18 +1,16 @@
 # == Class: role_sensu::client
 #
 class role_sensu::client {
-  
-  # Create private key file for save rabbitmq communication between client and server:
-  file { '/etc/sensu/ssl/private_key.pem':
+
+  file { '/etc/sensu/ssl/cert.pem':
     ensure  => present,
-    content => $role_sensu::private_key,
+    content => $role_sensu::cert,
     mode    => '0644',
   }
-  
-  # Create cert chain file:
-  file { '/etc/sensu/ssl/cert_chain.pem':
+
+  file { '/etc/sensu/ssl/key.pem':
     ensure  => present,
-    content => $role_sensu::cert_chain,
+    content => $role_sensu::key,
     mode    => '0644',
   }
 
