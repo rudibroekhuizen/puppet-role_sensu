@@ -51,7 +51,7 @@ class role_sensu (
 
   # Server: Sensu
   $api_user        = "api_user",
-  $api_password    = "password",
+  $api_password    = "secret",
   $checks_defaults = { interval    => 600,
                        occurrences => 3,
                        refresh     => 60,
@@ -86,7 +86,7 @@ class role_sensu (
                            insecure => false,
                            port     => 4567,
                            user     => 'api_user',
-                           pass     => 'password',
+                           pass     => 'secret',
                            timeout  => 5
                          }
                        ],
