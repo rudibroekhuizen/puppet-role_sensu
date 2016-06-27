@@ -38,7 +38,7 @@
 class role_sensu (
   # General
   $mode              = "server",
-  $rabbitmq_password = "password",
+  $rabbitmq_password = "secret",
 
   # Client
   $sensu_server  = "172.16.3.11",
