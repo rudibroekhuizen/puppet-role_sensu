@@ -1,7 +1,8 @@
 # == Class: role_sensu::rabbitmq
 #
 class role_sensu::rabbitmq {
-
+  
+  # Use Sensu SSL tool to generate certificates
   class {'::rabbitmq':
     ssl_key           => '/etc/rabbitmq/ssl/key.pem',
     ssl_cert          => '/etc/rabbitmq/ssl/cert.pem',
