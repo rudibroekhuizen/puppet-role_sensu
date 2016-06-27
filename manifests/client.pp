@@ -2,23 +2,15 @@
 #
 class role_sensu::client {
 
-  file { '/etc/sensu/ssl/cert.pem':
-    ensure  => present,
-    content => $role_sensu::cert,
-    mode    => '0644',
-  }
-
-  file { '/etc/sensu/ssl/key.pem':
-    ensure  => present,
-    content => $role_sensu::key,
-    mode    => '0644',
-  }
-
+  # Use Sensu SSL tool to generate certificates
   class { 'sensu':
-    rabbitmq_vhost    => '/sensu',
-    rabbitmq_password => $role_sensu::rabbitmq_password,
-    rabbitmq_host     => $role_sensu::sensu_server,
-    subscriptions     => $role_sensu::subscriptions,
+    purge_config             => true,
+    rabbitmq_vhost           => '/sensu',
+    rabbitmq_ssl_cert_chain  => '/etc/sensu/ssl/cert.pem',
+    rabbitmq_ssl_private_key => '/etc/sensu/ssl/key.pem',
+    rabbitmq_password        => $role_sensu::rabbitmq_password,
+    rabbitmq_host            => $role_sensu::sensu_server,
+    subscriptions            => $role_sensu::subscriptions,
   }
  
   # Install plugins
