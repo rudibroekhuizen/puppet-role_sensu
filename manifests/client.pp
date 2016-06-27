@@ -2,7 +2,7 @@
 #
 class role_sensu::client {
   
-  # Create private key file for rabbitmq communication between client and server:
+  # Create private key file for save rabbitmq communication between client and server:
   file { '/etc/sensu/ssl/private_key.pem':
     ensure  => present,
     content => $role_sensu::private_key,
