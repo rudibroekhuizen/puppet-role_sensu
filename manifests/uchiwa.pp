@@ -11,18 +11,18 @@ class role_sensu::uchiwa {
   }
 
   # If using uchiwa ssl settings: "bind: permission denied"; using nginx
-  class {'::nginx': }
+  #class {'::nginx': }
 
-  nginx::resource::upstream { 'sensu':
-    members => ['localhost:3000'],
-  }
+  #nginx::resource::upstream { 'sensu':
+  #  members => ['localhost:3000'],
+  #}
 
-  nginx::resource::vhost { 'sensu':
-    proxy       => 'http://localhost:3000',
-    ssl         => true,
-    listen_port => 443,
-    ssl_cert    => '/etc/sensu/ssl/uchiwa.pem',
-    ssl_key     => '/etc/sensu/ssl/uchiwa.key',
-  }
+  #nginx::resource::vhost { 'sensu':
+  #  proxy       => 'http://localhost:3000',
+  #  ssl         => true,
+  #  listen_port => 443,
+  #  ssl_cert    => '/etc/sensu/ssl/uchiwa.pem',
+  #  ssl_key     => '/etc/sensu/ssl/uchiwa.key',
+  #}
 
 }
