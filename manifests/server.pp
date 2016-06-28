@@ -15,11 +15,13 @@ class role_sensu::server {
     rabbitmq_password        => $role_sensu::rabbitmq_password,
     rabbitmq_ssl_cert_chain  => '/etc/sensu/ssl/cert.pem',
     rabbitmq_ssl_private_key => '/etc/sensu/ssl/key.pem',
+    rabbitmq_host            => 'localhost',
     rabbitmq_vhost           => '/sensu',
     api                      => true,
     api_user                 => $role_sensu::api_user,
     api_password             => $role_sensu::api_password,
     use_embedded_ruby        => true,  # /opt/sensu/embedded/bin/ruby 
+    subscriptions            => $role_sensu::subscriptions,
   }
   
   # Create checks hiera yaml input
