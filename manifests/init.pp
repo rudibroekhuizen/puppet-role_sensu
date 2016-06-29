@@ -81,7 +81,7 @@ class role_sensu (
                      
   # Server: Uchiwa dashboard
   $uchiwa_api_config = [ { name     => 'ICTSUPPORT',
-                           host     => 'localhost',
+                           host     => '127.0.0.1',
                            ssl      => false,
                            insecure => false,
                            port     => 4567,
